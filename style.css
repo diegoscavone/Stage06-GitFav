@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #000000;
+  --bg-table-th: #092d38;
+  --bg-table-tr: #06181c;
+  --bg-input: #06181c;
+  --bg-table-border: #4a808c;
+
+  --bg-button: #065e7c;
+  --bg-button-hover: #ffffff;
+
+  --text-color-placeholder: #7c7c8a;
+  --text-color: #e1e1e6;
+  --text-color-hover: #065e7c;
+  --text-color-remove: #f75a68;
+  --text-color-empty: #4E5455;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+body,
+input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+#app {
+  max-width: 112rem;
+  display: flex;
+  flex-direction: column;
+  padding: 11.5rem 0;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Input*/
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.input-wrapper input {
+  background-color: var(--bg-input);
+  border: none;
+  min-width: 46.2rem;
+  height: 4.8rem;
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  color: var(--text-color-placeholder);
+}
+
+.input-wrapper input::placeholder {
+  color: var(--text-color-placeholder);
+}
+
+.input-wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  background-color: var(--bg-button);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.2rem 3.2rem;
+
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+}
+
+.input-wrapper button:hover {
+  background-color: var(--bg-button-hover);
+  color: var(--text-color-hover);
+  cursor: pointer;
+}
+
+.input-wrapper button svg path {
+  fill: var(--bg-button-hover);
+}
+
+.input-wrapper button:hover svg path {
+  fill: var(--bg-button);
+}
+
+/*Table*/
+.table-wrapper{
+  width: 100%;
+  max-height: 590px;
+  overflow-y: auto;
+  margin: 9rem 0;
+}
+
+.table-wrapper:-webkit-scrollbar-track{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+	background-color: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar{
+	width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+	background-color: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+	border-radius:1rem;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--bg-table-border);
+}
+table * {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 1.2rem;
+  border: 0.1rem solid var(--bg-table-border);
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+table tr:first-child {
+  border-bottom: 1px solid var(--bg-table-border);
+}
+
+th,
+td {
+  padding: 1.6rem 4rem;
+}
+
+table thead {
+  background-color: var(--bg-table-th);
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+table th {
+  background-color: var(--bg-table-th);
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+
+table tr {
+  background-color: var(--bg-table-tr);
+  color: var(--text-color);
+}
+
+/*preenche as linhas impares com a cor #ddd*/
+table tr:nth-child(odd) {
+  background: var(--bg-table);
+}
+
+td {
+  border-bottom: 1px solid var(--bg-table-border);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.user img {
+  border-radius: 50%;
+  width: 5.6rem;
+}
+
+table td a {
+  text-decoration: none;
+}
+
+table td span {
+  font-weight: 400;
+}
+
+.remove {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color-remove);
+  cursor: pointer;
+}
+
+.messageFav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  padding: 21rem 0;
+}
+
+.messageFav img{
+  width: 13.2rem;
+}
+
+.messageFav p{
+  font-family: 'Roboto Mono', monospace;
+  color: var(--text-color-empty);
+  font-size: 4rem;
+}
+
+.hide {
+  display: none;
+  transition: display .5s ease;
+}
